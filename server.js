@@ -15,11 +15,14 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+mongoose.connect("mongodb://username123:password123@ds051843.mlab.com:51843/heroku_x22llr6r", {
+  useNewUrlParser: true,
+  useFindAndModify: false
+});
 
+// var MONGODB_URI = process.env.MONGODB_URI || "mongodb://username123:password123@ds051843.mlab.com:51843/heroku_x22llr6r";
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://username123:password123@ds051843.mlab.com:51843/heroku_x22llr6r";
-
-mongoose.connect(MONGODB_URI);
+// mongoose.connect(MONGODB_URI);
 
 // routes
 app.use(require("./routes/api.js"));
