@@ -1,11 +1,15 @@
 //from Google Developer (install service worker)
 
-var CACHE_NAME = 'my-site-cache-v1';
+var CACHE_NAME = 'budget-tracker-cache-v1';
+var DATA_CACHE_NAME = 'data-cache-v1';
+
 var urlsToCache = [
-'/',
-'/styles.css',
-'/index.js'
-];
+    '/',
+    'index.js',
+    'db.js',
+    'styles.css',
+    'index.html'
+    ];
 
 self.addEventListener('install', function(event) {
   // Perform install steps
@@ -16,7 +20,14 @@ event.waitUntil(
         return cache.addAll(urlsToCache);
     })
 );
+
+self.skipWaiting();
 });
+
+
+//activate?
+
+
 
 
 
