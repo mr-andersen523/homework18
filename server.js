@@ -17,7 +17,8 @@ app.use(express.static("public"));
 
 mongoose.connect("mongodb://username123:password123@ds051843.mlab.com:51843/heroku_x22llr6r", {
   useNewUrlParser: true,
-  useFindAndModify: false
+  useFindAndModify: false,
+  useUnifiedTopology: true,
 });
 
 // var MONGODB_URI = process.env.MONGODB_URI || "mongodb://username123:password123@ds051843.mlab.com:51843/heroku_x22llr6r";
